@@ -1,6 +1,6 @@
 function calcInitialConditions()
 %% Set default initial orbital state and attitude
-sim_t0Vec = [2019 12 31 12 0 0];
+sim_t0Vec = [2020 12 31 12 0 0];
 mjd = mjuliandate(sim_t0Vec);
 sim_t0 = juliandate(sim_t0Vec);            % Simulation start date
 epochVec = [2000 1 1 12 0 0];
