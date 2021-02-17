@@ -91,7 +91,9 @@ clearvars -except initCond gains Ts vehicle
 
 load('buses.mat');
 
-setupCubeSatVisualization();
+variantVisualization = 0;
+visOff = Simulink.Variant('variantVisualization == 0');
+visSL3D = Simulink.Variant('variantVisualization == 1');
 
 function dcm = dcmIJK2J2000(epochVec, dAT)
 %Compute tranformation from ECI with mean equinox at epoch to J2000

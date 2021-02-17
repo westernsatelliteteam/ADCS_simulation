@@ -31,15 +31,15 @@ if builtin('license','test','Virtual_Reality_Toolbox')
         else
             assignin('base', 'variantVisualization', 0); % No Visualization
         end
-        if bdIsLoaded('asbCubeSat')
-            model_obj = get_param('asbCubeSat','Object');
+        if bdIsLoaded('ADCS')
+            model_obj = get_param('ADCS','Object');
             model_obj.refreshModelBlocks;
         end
     end
 else
     assignin('base', 'variantVisualization', 0);
-    if bdIsLoaded('asbCubeSat')
-        model_obj = get_param('asbCubeSat','Object');
+    if bdIsLoaded('ADCS')
+        model_obj = get_param('ADCS','Object');
         model_obj.refreshModelBlocks;
     end
     msgbox('No License found for Simulink 3D Animation.');
