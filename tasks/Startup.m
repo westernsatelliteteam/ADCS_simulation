@@ -13,10 +13,14 @@ gains.Kp = 0.00001;                    % Controller Proportional Gain
 gains.Ki = 0.0000000001;               % Controller Integral Gain
 gains.Kd = 0.01;                       % Controller Derivative Gain
 
-%% Set Visualization
+%% Set Variants
 variantVisualization = 0;
 visOff = Simulink.Variant('variantVisualization == 0');
 visSL3D = Simulink.Variant('variantVisualization == 1');
+
+variantSensors = 0;
+IDEAL_SENSORS = Simulink.Variant('variantSensors == 0');
+REAL_SENSORS = Simulink.Variant('variantSensors == 1');
 
 %% Startup
 calcInitialConditions();
