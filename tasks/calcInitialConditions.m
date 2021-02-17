@@ -1,14 +1,4 @@
-Ts = 1;
-
-%% Set mass properties
-vehicle.mass = 1;                      % CubeSat mass [kg]
-vehicle.inertia = eye(3);              % CubeSat Moments of Inertia [kg*m^2]
-
-%% Set controller properties
-gains.Kp = 0.00001;                    % Controller Proportional Gain
-gains.Ki = 0.0000000001;               % Controller Integral Gain
-gains.Kd = 0.01;                       % Controller Derivative Gain
-
+function calcInitialConditions()
 %% Set default initial orbital state and attitude
 sim_t0Vec = [2019 12 31 12 0 0];
 mjd = mjuliandate(sim_t0Vec);
@@ -87,13 +77,9 @@ initCond.uvw = uvw(:)';
 initCond.euler = euler(:)';
 initCond.pqr = pqr(:)';
 
-clearvars -except initCond gains Ts vehicle
+assignin('base', 'initCond', initCond);
 
-load('buses.mat');
-
-variantVisualization = 0;
-visOff = Simulink.Variant('variantVisualization == 0');
-visSL3D = Simulink.Variant('variantVisualization == 1');
+end
 
 function dcm = dcmIJK2J2000(epochVec, dAT)
 %Compute tranformation from ECI with mean equinox at epoch to J2000
