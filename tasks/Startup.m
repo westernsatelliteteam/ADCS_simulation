@@ -19,8 +19,8 @@ visOff = Simulink.Variant('variantVisualization == 0');
 visSL3D = Simulink.Variant('variantVisualization == 1');
 
 variantSensors = 0;
-IDEAL_SENSORS = Simulink.Variant('variantSensors == 0');
-REAL_SENSORS = Simulink.Variant('variantSensors == 1');
+sensIdeal = Simulink.Variant('variantSensors == 0');
+sensReal = Simulink.Variant('variantSensors == 1');
 
 %% Startup
 calcInitialConditions();
