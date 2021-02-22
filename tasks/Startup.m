@@ -25,4 +25,6 @@ sensReal = Simulink.Variant('variantSensors == 1');
 %% Startup
 calcInitialConditions();
 
+%%%test from Daya lol
+
 load('buses.mat');
