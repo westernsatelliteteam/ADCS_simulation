@@ -13,6 +13,8 @@ gains.Kp = 0.00001;                    % Controller Proportional Gain
 gains.Ki = 0.0000000001;               % Controller Integral Gain
 gains.Kd = 0.01;                       % Controller Derivative Gain
 
+gains.Kw = 0.01;
+
 %% Set Variants
 variantVisualization = 0;
 visOff = Simulink.Variant('variantVisualization == 0');
@@ -24,5 +26,6 @@ sensReal = Simulink.Variant('variantSensors == 1');
 
 %% Startup
 calcInitialConditions();
+Actuators;
 
 load('buses.mat');
